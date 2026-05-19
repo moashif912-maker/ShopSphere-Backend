@@ -17,12 +17,12 @@ public class CartController {
 
     @PostMapping("/add")
     public ResponseEntity<CartItem> addToCart(
-            Principal principal,
+            @RequestParam String email,
             @RequestParam Long productId,
             @RequestParam Integer quantity) {
         return ResponseEntity.ok(
                 cartService.addToCart(
-                        principal.getName(),
+                        email,
                         productId, quantity));
     }
 

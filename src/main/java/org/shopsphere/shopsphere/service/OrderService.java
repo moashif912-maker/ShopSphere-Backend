@@ -19,6 +19,9 @@ public class OrderService {
     @Autowired
     private CartService cartService;
 
+    @Autowired
+    private EmailService emailService;
+
     public Order placeOrder(
             String email, String address) {
 
@@ -50,6 +53,11 @@ public class OrderService {
         order.setOrderDate(LocalDateTime.now());
 
         orderRepository.save(order);
+        emailService.sendOrderConfirmation(
+                email,
+                order.getId(),
+                order.getTotalAmount()
+        );
         cartService.clearCart(email);
         return order;
     }
