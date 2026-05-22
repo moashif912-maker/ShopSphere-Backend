@@ -75,7 +75,7 @@
 
         spring.jpa.hibernate.ddl-auto=update
         spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-        spring.datasource.driver-class-name=org.postgresql.Driver
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
