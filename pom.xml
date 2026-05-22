@@ -69,6 +69,13 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+        spring.datasource.url=${SPRING_DATASOURCE_URL}
+        spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+        spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+
+        spring.jpa.hibernate.ddl-auto=update
+        spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+        spring.datasource.driver-class-name=org.postgresql.Driver
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
